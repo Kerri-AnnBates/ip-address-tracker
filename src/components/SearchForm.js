@@ -4,7 +4,7 @@ import arrowIcon from "../images/icon-arrow.svg";
 const SearchForm = () => {
     return (
         <div className="search">
-            <form>
+            <form className="search-form">
                 <label htmlFor="search">
                     <input
                         id="search"
@@ -12,7 +12,7 @@ const SearchForm = () => {
                         placeholder="Search for any IP address or domain"
                     />
                 </label>
-                <button className="btn"><img src={arrowIcon} alt="Arrow icon" /></button>
+                <button className="btn btn__form"><img src={arrowIcon} alt="Arrow icon" /></button>
             </form>
         </div>
     )
