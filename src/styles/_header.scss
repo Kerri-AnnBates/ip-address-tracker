@@ -1,0 +1,25 @@
+header {
+    position: relative;
+}
+
+header:after {
+    content: "";
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/pattern-bg.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.header__title {
+    font-weight: 700;
+    color: $white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: $mediumFont;
+}

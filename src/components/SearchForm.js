@@ -5,7 +5,7 @@ const SearchForm = () => {
     return (
         <div className="search">
             <form>
-                <label for="search">
+                <label htmlFor="search">
                     <input
                         id="search"
                         name="search"
