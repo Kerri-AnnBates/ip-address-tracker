@@ -1,6 +1,6 @@
 .ip-data {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 10px;
     text-align: center;
     box-shadow: 3px 3px 10px 4px rgba(150,150,150,0.6);
@@ -12,6 +12,7 @@
         color: $darkGrey;
         text-transform: uppercase;
         margin-bottom: 10px;
+        font-weight: 500;
     }
 }
 
