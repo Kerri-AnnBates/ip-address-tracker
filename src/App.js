@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
-import Map from "./components/Map";
+import MapDisplay from "./components/MapDisplay";
 import "./styles/main.scss";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <Map />
+      <MapDisplay />
     </div>
   );
 }
