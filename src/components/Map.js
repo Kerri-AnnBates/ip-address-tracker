@@ -2,9 +2,7 @@ import React from "react";
 
 const Map = () => {
     return (
-        <div className="map">
-            Map goes here
-        </div>
+        <div className="map" id="ip-map"></div>
     )
 }
 
