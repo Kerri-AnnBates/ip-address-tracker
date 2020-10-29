@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import IpAddressContext from "../contexts/IpAdressContext";
 
 const IPDataBlock = () => {
+    const [ipAddress, setIpAddress] = useContext(IpAddressContext);
+
     return (
         <div className="ip-data">
             <div className="flex-parent data-container">
