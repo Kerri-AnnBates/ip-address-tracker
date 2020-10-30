@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import MapDisplay from "./components/MapDisplay";
-import Ipinfo from "./contexts/Ipinfo";
+import IpinfoDtails from "./contexts/IpinfoDetails";
 import "./styles/main.scss";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const App = () => {
-  const ipAddress = useState(null);
+  const ipInfo = useState(null);
 
   return (
-    <Ipinfo.Provider value={ipAddress}>
+    <IpinfoDtails.Provider value={ipInfo}>
       <div className="App">
         <Header />
         <MapDisplay />
       </div>
-    </Ipinfo.Provider>
+    </IpinfoDtails.Provider>
   );
 }
 
