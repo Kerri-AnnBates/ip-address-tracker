@@ -6,8 +6,6 @@ import IpInfoDetails from "../contexts/IpinfoDetails";
 const MapDisplay = () => {
     const [ipInfo] = useContext(IpInfoDetails);
     const [viewport, setViewport] = useState({
-        height: "100vh",
-        width: "100vw",
         latitude: 0,
         longitude: 0,
         zoom: 12
@@ -28,9 +26,12 @@ const MapDisplay = () => {
             { ipInfo ?
                 (<ReactMapGL
                     {...viewport}
+                    width="100%"
+                    height="100%"
                     mapStyle="mapbox://styles/mapbox/streets-v11"
                     mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API}
                     onViewportChange={setViewport}
+                    id="map"
                 >
                     <Marker
                         latitude={ipInfo && ipInfo.location.lat}
@@ -43,8 +44,7 @@ const MapDisplay = () => {
                 </ReactMapGL>) :
                 (<div>Loading Map...</div>)
             }
-        </main>
-
+        </main >
     )
 }
 
