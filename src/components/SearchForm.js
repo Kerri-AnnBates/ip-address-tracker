@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import arrowIcon from "../images/icon-arrow.svg";
+import IpinfoDtails from "../contexts/IpinfoDetails";
 
 const SearchForm = () => {
+    const [ipInfo, setIpInfo] = useContext(IpinfoDtails);
+
     return (
         <div className="search">
             <form className="search-form">

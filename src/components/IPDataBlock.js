@@ -5,36 +5,14 @@ import IpinfoDtails from "../contexts/IpinfoDetails";
 const IPDataBlock = () => {
     const [ipInfo, setIpInfo] = useContext(IpinfoDtails);
 
-    const getIpAdress = () => {
-        return axios.get(`https://api.ipify.org?format=json`)
+    useEffect(() => {
+        axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}`)
             .then(data => {
-                return data.data;
+                setIpInfo(data.data);
             })
             .catch(error => {
                 console.log(error);
             })
-    }
-
-    // Get ip info
-    const getIpInfo = async () => {
-        // Get ipaddress first
-        const result = await getIpAdress();
-
-        if (result) {
-            axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}&ipAddress=${result.ip}`)
-                .then(data => {
-                    setIpInfo(data.data);
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        } else {
-            console.log("Result not processed");
-        }
-    }
-
-    useEffect(() => {
-        getIpInfo();
     }, []);
 
     return (
