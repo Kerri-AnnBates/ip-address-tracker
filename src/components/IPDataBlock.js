@@ -23,7 +23,6 @@ const IPDataBlock = () => {
         if (result) {
             axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}&ipAddress=${result.ip}`)
                 .then(data => {
-                    console.log(data.data);
                     setIpInfo(data.data);
                 })
                 .catch(error => {
