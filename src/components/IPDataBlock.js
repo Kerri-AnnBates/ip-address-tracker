@@ -7,8 +7,8 @@ const IPDataBlock = () => {
 
     useEffect(() => {
         axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}`)
-            .then(data => {
-                setIpInfo(data.data);
+            .then(res => {
+                setIpInfo(res.data);
             })
             .catch(error => {
                 console.log(error);
@@ -33,7 +33,7 @@ const IPDataBlock = () => {
                 <div className="flex-item data-block">
                     <h2 className="sub-title">Timezone</h2>
                     <p className="ip-data-data ip-timezone">
-                        {ipInfo ? ipInfo.location.timezone : "Loading..."}
+                        {ipInfo ? `UTC ${ipInfo.location.timezone}` : "Loading..."}
                     </p>
                 </div>
                 <div className="flex-item data-block">

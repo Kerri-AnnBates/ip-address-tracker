@@ -2,4 +2,8 @@
     position: relative;
     height: calc(100vh - 300px);
     width: 100%;
+
+    @media screen and (min-width: $desktopSize) { 
+        height: calc(100vh - #{$headerHeightDesktop});
+    }
 }

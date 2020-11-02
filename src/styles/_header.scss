@@ -20,7 +20,7 @@ header, header:after {
     height: 300px;
     
     @media screen and (min-width: $desktopSize) { 
-        height: 270px;
+        height: $headerHeightDesktop;
     }
 }
 
