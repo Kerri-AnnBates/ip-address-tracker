@@ -1,12 +1,10 @@
 header {
     position: relative;
     z-index: 1;
-    height: 300px;
 }
 
 header:after {
     content: "";
-    height: 300px;
     position: absolute;
     top: 0;
     left: 0;
@@ -16,6 +14,14 @@ header:after {
     background-position: center;
     background-size: cover;
     z-index: -1;
+}
+
+header, header:after {
+    height: 300px;
+    
+    @media screen and (min-width: $desktopSize) { 
+        height: 270px;
+    }
 }
 
 .header__title {
