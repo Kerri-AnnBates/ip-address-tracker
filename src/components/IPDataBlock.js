@@ -1,19 +1,8 @@
-import React, { useContext, useEffect } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import IpinfoDtails from "../contexts/IpinfoDetails";
 
 const IPDataBlock = () => {
-    const [ipInfo, setIpInfo] = useContext(IpinfoDtails);
-
-    useEffect(() => {
-        axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}`)
-            .then(res => {
-                setIpInfo(res.data);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }, []);
+    const [ipInfo] = useContext(IpinfoDtails);
 
     return (
         <div className="ip-data">
