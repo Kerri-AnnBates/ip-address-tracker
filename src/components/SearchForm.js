@@ -7,6 +7,7 @@ const SearchForm = () => {
     const [ipInfo, setIpInfo] = useContext(IpinfoDtails);
     const [input, setInput] = useState("");
     const [submittedData, setSubmittedData] = useState("");
+    const [isFetching, setIsFetching] = useState(false);
 
     const handleChange = (e) => {
         setInput(e.target.value);
@@ -26,12 +27,16 @@ const SearchForm = () => {
     // Fetch data on submit
     useEffect(() => {
         if (submittedData) {
+            setIsFetching(true);
+
             axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API}&domain=${submittedData}`)
                 .then((res) => {
                     setIpInfo(res.data);
+                    setIsFetching(false);
                 })
                 .catch(error => {
                     console.log(error);
+                    setIsFetching(false);
                     alert("Invalid IP address or domain.");
                 })
         }
@@ -51,6 +56,7 @@ const SearchForm = () => {
                 </label>
                 <button className="btn btn__form"><img src={arrowIcon} alt="Arrow icon" /></button>
             </form>
+            <div>{isFetching && <p>Fetching data...</p>}</div>
         </div>
     )
 }
